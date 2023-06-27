@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 echo 'The following Maven command installs your Maven-built Java application'
 echo 'into the local Maven repository, which will ultimately be stored in'
 echo 'Jenkins''s local Maven repository (and the "maven-repository" Docker data'
@@ -28,3 +27,8 @@ sleep 1
 echo $! > .pidfile
 echo $!
 set +x
+echo 'Jeda 1 Menit sebelum aplikasi ditutup'
+sleep 1m
+set -x
+kill $(cat .pidfile)
+
